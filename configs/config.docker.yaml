@@ -79,3 +79,5 @@ user_validator:
 
 slack_instance: foobar
 header_color: '#3a3a3a'
+
+require_auth: False

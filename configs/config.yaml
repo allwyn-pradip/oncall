@@ -137,13 +137,13 @@ supported_timezones:
   - 'UTC'
 
 index_content_setting:
-  # Page footer contents
-  #footer: |
-  #  <ul>
-  #    <li>Oncall © LinkedIn 2020</li>
+   Page footer contents
+  footer: |
+    <ul>
+      <li>Freshworks © Freshworks 2021</li>
   #    <li>Feedback</li>
   #    <li><a href="http://oncall.tools" target="_blank">About</a></li>
-  #  </ul>
+    </ul>
   # Note displayed when a user has no phone number
   missing_number_note: 'No number'
 header_color: '#3a3a3a'
@@ -232,3 +232,5 @@ require_auth: False
 #     mail: 'mail'
 #     mobile: 'mobile'
 #   image_url: 'https://image.example.com/api/%s/picture'
+
+require_auth: False
