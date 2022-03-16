@@ -1,5 +1,5 @@
 prod:
-    plugins: python3,logfile
+    plugins: python3,logfile, python3-gevent
     chdir: /home/oncall/source
     socket: /home/oncall/var/run/uwsgi.sock
     chmod-socket: 666
