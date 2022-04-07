@@ -1,5 +1,5 @@
-FROM ubuntu:18.04
-
+FROM ubuntu:20.04
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get -y dist-upgrade \
     && apt-get -y install libffi-dev libsasl2-dev python3-dev \
         sudo libldap2-dev libssl-dev python3-pip python3-setuptools python3-venv \

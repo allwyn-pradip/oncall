@@ -31,7 +31,7 @@ setuptools.setup(
         'falcon-cors',
         'greenlet==0.4.16',
         'asn1crypto==1.0.0',
-        'gevent==1.4.0',
+        'gevent==1.5.0',
         'ujson',
         'sqlalchemy',
         'PyYAML',
@@ -48,7 +48,8 @@ setuptools.setup(
         'slackclient==1.3.1',
         'icalendar',
         'pymsteams',
-        'idna==2.10'
+        'idna==3.0',
+        'markupsafe>= 2.0.0'
     ],
     extras_require={
         'ldap': ['python-ldap'],
