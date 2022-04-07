@@ -1,5 +1,6 @@
 FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt-get update && apt-get -y dist-upgrade \
     && apt-get -y install libffi-dev libsasl2-dev python3-dev \
         sudo libldap2-dev libssl-dev python3-pip python3-setuptools python3-venv \
@@ -18,7 +19,11 @@ WORKDIR /home/oncall
 RUN chown -R oncall:oncall /home/oncall/source /var/log/nginx /var/lib/nginx \
     && sudo -Hu oncall mkdir -p /home/oncall/var/log/uwsgi /home/oncall/var/log/nginx /home/oncall/var/run /home/oncall/var/relay \
     && sudo -Hu oncall python3 -m venv /home/oncall/env \
-    && sudo -Hu oncall /bin/bash -c 'source /home/oncall/env/bin/activate && cd /home/oncall/source && pip install .'
+    && sudo -Hu oncall /bin/bash -c 'source /home/oncall/env/bin/activate && python3 -m pip install -U pip wheel && cd /home/oncall/source && pip install .'
+
+RUN sudo -Hu oncall python3 -m venv /home/oncall/env \
+    && sudo -Hu oncall /bin/bash -c 'git clone https://github.com/cleveritcz/oncall-admin.git /home/oncall/oncall-admin && \
+    source /home/oncall/env/bin/activate && cd /home/oncall/oncall-admin && python setup.py develop && make &'
 
 COPY . /home/oncall
 COPY ops/config/systemd /etc/systemd/system
@@ -29,5 +34,6 @@ COPY configs /home/oncall/config
 COPY ops/entrypoint.py /home/oncall/entrypoint.py
 
 EXPOSE 8080
+EXPOSE 16652
 
 CMD ["sudo", "-EHu", "oncall", "bash", "-c", "source /home/oncall/env/bin/activate && python -u /home/oncall/entrypoint.py"]
