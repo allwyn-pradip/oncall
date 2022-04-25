@@ -33,6 +33,7 @@ setuptools.setup(
         'asn1crypto==1.0.0',
         'gevent==1.5.0',
         'ujson',
+        'markupsafe',
         'sqlalchemy',
         'PyYAML',
         'PyMYSQL',
