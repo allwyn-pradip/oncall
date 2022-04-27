@@ -126,6 +126,7 @@ messengers:
 ### Oncall frontend settings
 ############################
 supported_timezones:
+  - 'Asia/Kolkata'
   - 'US/Pacific'
   - 'US/Eastern'
   - 'US/Central'
@@ -140,9 +141,9 @@ index_content_setting:
    Page footer contents
   footer: |
     <ul>
-      <li>Freshworks © Freshworks 2021</li>
+      <li>FRESH Oncall © FRESHWORKS 2022</li>
   #    <li>Feedback</li>
-  #    <li><a href="http://oncall.tools" target="_blank">About</a></li>
+  #    <li><a href="http://freshworks.com" target="_blank">About</a></li>
     </ul>
   # Note displayed when a user has no phone number
   missing_number_note: 'No number'
