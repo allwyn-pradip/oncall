@@ -2,8 +2,8 @@ FROM ubuntu:20.04
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::=--force-confold dist-upgrade \
     && DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::=--force-confold install libffi-dev libsasl2-dev python3-dev \
-    sudo libldap2-dev libssl-dev python3-pip python3-setuptools python3-venv \
-    mysql-client uwsgi uwsgi-plugin-python3 nginx \
+        sudo libldap2-dev libssl-dev python3-pip python3-setuptools python3-venv \
+        mysql-client uwsgi uwsgi-plugin-python3 nginx \
     && rm -rf /var/cache/apt/archives/*
 
 RUN useradd -m -s /bin/bash oncall
