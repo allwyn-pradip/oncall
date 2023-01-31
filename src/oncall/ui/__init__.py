@@ -63,7 +63,7 @@ mimes = {
 
 INDEX_CONTENT_SETTING = {
     'user_setting_note': '',
-    'footer': '<ul><li>Oncall © LinkedIn %s</li><li><a href="http://oncall.tools" target="_blank">About</a></li></ul>' % date.today().year,
+    'footer': '<ul><li>Oncall © Freshwoks %s</li><li><a href="http://freshworks.com" target="_blank">About</a></li></ul>' % date.today().year,
 }
 
 SLACK_INSTANCE = None

@@ -39,7 +39,10 @@ setuptools.setup(
         'PyYAML',
         'PyMYSQL',
         'phonenumbers',
+
         'jinja2==3.0.3',
+        'streql',
+
         'webassets',
         'beaker',
 
